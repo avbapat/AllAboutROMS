@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
+import { Device } from '@ionic-native/device';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
+  model:any;
+  deviceID:any;
+  version: any;
+  constructor(public navCtrl: NavController,public platform: Platform) {
 
   }
 

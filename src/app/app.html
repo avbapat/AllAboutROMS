@@ -10,9 +10,14 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-    </ion-list>
-  </ion-content>
 
+    </ion-list>
+    <ion-footer>
+      <p style="text-align: center;"><a href="https://icons8.com/icon/63306/telegram-app">Telegram App icon by Icons8</a></p>
+    </ion-footer>
+    
+  </ion-content>
+ 
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

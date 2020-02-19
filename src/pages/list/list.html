@@ -3,21 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Devices
+      <span style="float:right">
+        <ion-icon name="funnel"></ion-icon>
+      </span>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  <ion-list>    
+    <ion-item  *ngFor="let device of deviceList | search : terms" (click)="navigateToDetails(device)">
+      <ion-avatar item-start>
+        <img src={{device.imgURL}}>
+      </ion-avatar>
+      <h2>{{device.DeviceName}}</h2>
+      <h3>{{device.Mfg}}</h3>
+      <p>Launched: {{device.launchDate}} | No Of ROMS : {{device.noOfRoms}}</p>
+    </ion-item>
+  
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+ 
 </ion-content>
