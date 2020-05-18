@@ -3,9 +3,11 @@ import { SearchPipe } from './search/search';
 import { SortPipe } from './sort/sort';
 @NgModule({
 	declarations: [SearchPipe,
-    SortPipe],
+    SortPipe,
+    SearchPipe],
 	imports: [],
 	exports: [SearchPipe,
-    SortPipe]
+    SortPipe,
+    SearchPipe]
 })
 export class PipesModule {}

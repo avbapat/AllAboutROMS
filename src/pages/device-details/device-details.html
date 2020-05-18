@@ -29,22 +29,21 @@
   <hr>
   <h4 class="center-align">List of Available Custom ROMS</h4>
   <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
-  <ion-list>
-   
+  
     <ion-item *ngFor="let rom of romList | search : terms" text-wrap>
       <ion-avatar item-start>
         <img src={{rom.romImg}}>
         </ion-avatar>
-        <a href="{{rom.romLink}}" style="color: slategray; font-size: 14px;" > {{rom.ROMName}} </a>
+        <a href="{{rom.romLink}}" style="color: slategray; font-size: 14px;" > {{rom.ROMName}} <ion-icon name="open" style="padding-left: 10px;"></ion-icon>  </a>   <span style="float: right;">  <ion-icon name="construct"></ion-icon>  {{rom.buildDate}}</span>  
         <br>
-        <span style="font-size: 12px;"><ion-icon name="code"></ion-icon>   {{rom.Dev}}  |  <ion-icon name="download"></ion-icon>  {{rom.totalDownloads}} |  <ion-icon name="construct"></ion-icon>  {{rom.buildDate}} </span> 
+        <span style="font-size: 12px;" text-wrap><ion-icon name="code"></ion-icon>   {{rom.Dev}}    </span> 
       <br>
       <hr>
      <ion-row>
-               <a href="{{rom.tg}}"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" style="height: 20px; width:20px;" > </a>
+     <a href="{{rom.tg}}"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" style="height: 20px; width: 20px;"/></a>
+      <!-- <span style="float: right;"><ion-icon name="download" ></ion-icon>  {{rom.totalDownloads}} </span> -->
       </ion-row>
    
     </ion-item>
-  </ion-list>
-  
+
 </ion-content>
